@@ -1,0 +1,1 @@
+.story-row{display:grid;gap:1.5rem;align-items:center}.story-row img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}.story-row h2{font:400 2rem 'Playfair Display',serif;color:var(--cocoa);margin:0}.story-row p{color:var(--muted)}@media(min-width:800px){.story-row{grid-template-columns:1fr 1fr;gap:3rem}}

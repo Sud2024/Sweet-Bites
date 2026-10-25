@@ -1,0 +1,1 @@
+.values{display:grid;gap:1rem}.value{padding:1.5rem;background:white;border-radius:var(--r);box-shadow:0 5px 18px rgba(81,43,32,.05)}.value h3{color:var(--cocoa);font:500 1.2rem 'Playfair Display',serif;margin:0 0 .3rem}.value p{color:var(--muted);font-size:.8rem;margin:0}@media(min-width:650px){.values{grid-template-columns:repeat(3,1fr)}}
