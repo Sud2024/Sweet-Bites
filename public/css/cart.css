@@ -1,0 +1,74 @@
+.cart-toolbar, .cart-actions, .order-dialog header, .cart-items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem;
+}
+.cart-toolbar {
+  flex-wrap: wrap;
+  padding: .85rem 0;
+  color: var(--cocoa);
+}
+.catalogue-dialog .cart-toolbar {
+  border-top: 1px solid var(--line);
+  padding: .75rem clamp(.85rem, 3vw, 1.6rem);
+}
+.cart-actions { flex-wrap: wrap; margin-left: auto; }
+.cart-status, .in-cart { font-size: .8rem; }
+.cart-status:empty, .in-cart:empty { display: none; }
+.cart-toolbar .btn, .order-dialog .btn { min-height: 2.75rem; }
+.cart-toolbar button:disabled, .order-dialog button:disabled { opacity: .5; cursor: default; }
+.order-dialog {
+  width: min(30rem, calc(100% - 1.5rem));
+  max-height: 88vh;
+  max-height: 88dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--ivory);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+.order-dialog::backdrop { background: rgb(38 23 17 / 55%); }
+body:has(.order-dialog[open]) { overflow: hidden; }
+.order-dialog h2 {
+  margin: 0;
+  color: var(--cocoa);
+  font: 500 1.65rem/1.2 'Playfair Display', serif;
+}
+.dialog-close {
+  border: 0;
+  background: transparent;
+  color: var(--cocoa);
+  font-size: 1.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.cart-items { list-style: none; margin: 0; padding: 0; }
+.cart-items li { padding: .85rem 0; border-bottom: 1px solid var(--line); }
+.cart-items li > div { display: grid; gap: .2rem; }
+.cart-items li > div:last-child { justify-items: end; text-align: right; }
+.cart-items small { color: var(--muted); }
+.cart-items button {
+  border: 0;
+  background: transparent;
+  color: var(--cocoa);
+  text-decoration: underline;
+  padding: .3rem 0;
+}
+.cart-total, .checkout-total { font-weight: 700; color: var(--cocoa); }
+.checkout-form, .checkout-form label { display: grid; gap: .35rem; }
+.checkout-form { gap: .85rem; margin-top: .75rem; }
+.checkout-form p { margin: 0; font-size: .85rem; }
+.checkout-form input, .checkout-form textarea {
+  width: 100%;
+  padding: .65rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+.checkout-form textarea { resize: vertical; }

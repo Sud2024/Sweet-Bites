@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('change', normaliseQuantity);
 
     action.insertBefore(quantityControl, actionLink);
-    actionLink.textContent = 'Order on WhatsApp';
+    const needsQuote = action.hasAttribute('data-starting-price');
+    actionLink.textContent = needsQuote ? 'Enquire on WhatsApp' : 'Order on WhatsApp';
     actionLink.classList.add('whatsapp-order');
     actionLink.href = `https://wa.me/${whatsappNumber}`;
     actionLink.target = '_blank';
@@ -62,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const quantity = normaliseQuantity();
       const total = (unitPrice * quantity).toLocaleString('en-IN');
-      const message = `Hi Sweet Bites, I'd like to order ${quantity} × ${productName} (${priceText} each). Total: ₹${total}.`;
+      const message = needsQuote
+        ? `Hi Sweet Bites, I'd like a quote for ${quantity} × ${productName} with a candle, chocolate and mixed dry fruits (starting from ${priceText} each).`
+        : `Hi Sweet Bites, I'd like to order ${quantity} × ${productName} (${priceText} each). Total: ₹${total}.`;
       window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     });
   });
